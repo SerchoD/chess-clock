@@ -1,4 +1,4 @@
-const Main = () => {
+const MainClock = () => {
 	return (
 		<div>
 			<h1>Pagina Principal</h1>
@@ -6,4 +6,4 @@ const Main = () => {
 	);
 };
 
-export default Main;
+export default MainClock;
