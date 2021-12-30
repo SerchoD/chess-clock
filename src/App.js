@@ -1,9 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
 	return (
-		<div className='App'>
+		<div className='App container-fluid'>
 			<header className='App-header'>Chess Clock!</header>
 		</div>
 	);
