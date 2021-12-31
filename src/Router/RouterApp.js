@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
-import MainClock from '../Pages/Main/Main';
+import MainClock from '../Pages/Main/MainClock';
 import { PATHS } from '../constants/PATHS';
 
 const RouterApp = () => {

@@ -1,0 +1,13 @@
+@import '../styles/variables.scss';
+
+.full-height {
+	height: 100vh;
+	&--top {
+		height: 90vh;
+	}
+}
+
+.main-container {
+	background-color: $primary;
+	width: 100vw;
+}
