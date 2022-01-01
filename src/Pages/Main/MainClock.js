@@ -11,8 +11,9 @@ const MainClock = () => {
 				<div className='upper-timer timer-container'>
 					<ButtonTimer buttonType='invert' active='inactive' />
 				</div>
-				<div className='center-bar' style={{ color: 'wheat' }}>
-					navbar menu
+				<div className='center-bar'>
+					<button className='menu-button'>1</button>
+					<button className='menu-button'>2</button>
 				</div>
 				<div className='bottom-timer timer-container'>
 					<ButtonTimer active='active' />
