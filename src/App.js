@@ -4,7 +4,7 @@ import RouterApp from './Router/RouterApp';
 
 function App() {
 	return (
-		<div className='App container-fluid'>
+		<div className='App container d-flex '>
 			<RouterApp />
 		</div>
 	);
