@@ -1,0 +1,37 @@
+@import '../../styles/variables.scss';
+
+.button-timer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	height: 100%;
+	border: none;
+
+	background-color: $color-1;
+
+	border-radius: 5px;
+
+	box-shadow: 5px 5px 5px black, inset 0px 0px 10px 10px rgb(0, 0, 0, 0.25);
+	// box-shadow: inset 5px 5px 5px black;
+
+	&--active {
+		background-color: $color-1;
+	}
+	&--inactive {
+		background-color: $color-3;
+	}
+
+	.invert {
+		transform: rotate(180deg);
+	}
+
+	h1 {
+		text-shadow: 3px 3px 3px $shadow-1, -3px -3px 3px $shadow-1,
+			-3px 3px 3px $shadow-1, 3px -3px 3px $shadow-1;
+
+		font-size: 5rem;
+		color: rgb(252, 226, 157);
+	}
+}

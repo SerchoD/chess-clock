@@ -1,14 +1,22 @@
 import React from 'react';
-import MainContainer from '../../Components/MainContainer';
+import ButtonTimer from '../../Components/ButtonTimer/ButtonTimer';
+import MainContainer from '../../Components/MainContainer/MainContainer';
+
+import './MainClock.scss';
 
 const MainClock = () => {
 	return (
 		<MainContainer full>
-			<div className='col-12 d-flex justify-content-center align-items-center'>
-				<h1 className='text-center' style={{ color: 'wheat' }}>
-					Hola Miamorcete, esta es la primer página que subo a
-					internet! :D{' '}
-				</h1>
+			<div className='mainClock-container col-12'>
+				<div className='upper-timer timer-container'>
+					<ButtonTimer buttonType='invert' active='inactive' />
+				</div>
+				<div className='center-bar' style={{ color: 'wheat' }}>
+					navbar menu
+				</div>
+				<div className='bottom-timer timer-container'>
+					<ButtonTimer active='active' />
+				</div>
 			</div>
 		</MainContainer>
 	);

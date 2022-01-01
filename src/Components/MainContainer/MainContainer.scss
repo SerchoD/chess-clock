@@ -1,4 +1,4 @@
-@import '../styles/variables.scss';
+@import '../../styles/variables.scss';
 
 .full-height {
 	height: 100vh;
@@ -8,6 +8,6 @@
 }
 
 .main-container {
-	background-color: $primary;
+	background-color: $color-2;
 	width: 100vw;
 }
