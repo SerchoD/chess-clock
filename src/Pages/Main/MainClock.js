@@ -51,7 +51,6 @@ const MainClock = () => {
 
 	const stop = () => {
 		setBotRunning(false);
-
 		clearInterval(interv);
 		setStatus(2);
 	};
