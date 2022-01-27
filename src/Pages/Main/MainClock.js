@@ -81,6 +81,7 @@ const MainClock = () => {
 
 	const resetUp = () => {
 		clearInterval(upInterv);
+		setUpRunning(false);
 		setUpTimer({ ms: 0, s: 0, m: 10, h: 0 });
 	};
 
@@ -127,6 +128,7 @@ const MainClock = () => {
 
 	const resetBot = () => {
 		clearInterval(botInterv);
+		setBotRunning(false);
 		setBotTimer({ ms: 0, s: 0, m: 4, h: 0 });
 	};
 
