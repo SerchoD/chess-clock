@@ -2,14 +2,14 @@ import React from 'react';
 
 import './ButtonTimer.scss';
 
-const ButtonTimer = ({ buttonType, active, time, onClick }) => {
+const ButtonTimer = ({ buttonType, active, lose, showTime, onClick }) => {
 	return (
 		<div
-			className={`button-timer button-timer--${active}`}
+			className={`button-timer button-timer--${active} button-timer--${lose}`}
 			onClick={onClick}
 		>
 			<div className={`${buttonType}`}>
-				<h1>{time}</h1>
+				<h1>{showTime}</h1>
 			</div>
 		</div>
 	);

@@ -6,6 +6,12 @@
 	justify-content: center;
 	align-items: center;
 
+	// Unselectable Text
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+
 	.timer-container {
 		display: flex;
 		justify-content: center;
@@ -30,6 +36,17 @@
 
 		.menu-button {
 			margin: 0px 20%;
+			border: none;
+		}
+		.pause {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			width: 50px;
+			height: 50px;
+			border-radius: 5px;
+			background-color: rgb(22, 22, 22);
 		}
 	}
 

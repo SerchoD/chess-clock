@@ -1,0 +1,16 @@
+@import '../../../styles/variables.scss';
+
+.pause__container {
+	display: flex;
+
+	.pause__barra {
+		width: 13px;
+		height: 30px;
+		margin: 2px;
+
+		border-radius: 5px;
+		box-shadow: 1px 1px 5px black;
+
+		background-color: rgb(65, 61, 61);
+	}
+}

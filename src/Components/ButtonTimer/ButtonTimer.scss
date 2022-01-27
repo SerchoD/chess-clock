@@ -22,6 +22,9 @@
 	&--inactive {
 		background-color: $color-3;
 	}
+	&--lose {
+		background-color: $color-4;
+	}
 
 	.invert {
 		transform: rotate(180deg);
