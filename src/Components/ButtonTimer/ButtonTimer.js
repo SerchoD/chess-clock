@@ -9,7 +9,7 @@ const ButtonTimer = ({ buttonType, active, lose, showTime, onClick }) => {
 			onClick={onClick}
 		>
 			<div className={`${buttonType}`}>
-				<h1>{showTime}</h1>
+				<h1 className='timer-text'>{showTime}</h1>
 			</div>
 		</div>
 	);

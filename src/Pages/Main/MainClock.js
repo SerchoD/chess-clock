@@ -9,26 +9,28 @@ const MainClock = () => {
 	const [upLose, setUpLose] = useState(false);
 	const [upTimer, setUpTimer] = useState({
 		ms: 0,
-		s: 5,
-		m: 0,
+		s: 0,
+		m: 10,
 		h: 0,
 	});
 
+	const showUpTimerMs = `.${upTimer.ms < 10 ? 0 : ''}${upTimer.ms}`;
 	const showUpTimer = `${upTimer.m < 10 ? 0 : ''}${upTimer.m}:${
 		upTimer.s < 10 ? 0 : ''
-	}${upTimer.s}.${upTimer.ms < 10 ? 0 : ''}${upTimer.ms}`;
+	}${upTimer.s}${upTimer.m <= 0 ? showUpTimerMs : ''}`;
 
 	const [botLose, setBotLose] = useState(false);
 	const [botTimer, setBotTimer] = useState({
 		ms: 0,
-		s: 5,
-		m: 0,
+		s: 0,
+		m: 4,
 		h: 0,
 	});
 
+	const showBotTimerMs = `.${botTimer.ms < 10 ? 0 : ''}${botTimer.ms}`;
 	const showBotTimer = `${botTimer.m < 10 ? 0 : ''}${botTimer.m}:${
 		botTimer.s < 10 ? 0 : ''
-	}${botTimer.s}.${botTimer.ms < 10 ? 0 : ''}${botTimer.ms}`;
+	}${botTimer.s}${botTimer.m <= 0 ? showBotTimerMs : ''}`;
 
 	const [upRunning, setUpRunning] = useState(false);
 	const [botRunning, setBotRunning] = useState(false);
@@ -79,7 +81,7 @@ const MainClock = () => {
 
 	const resetUp = () => {
 		clearInterval(upInterv);
-		setUpTimer({ ms: 0, s: 0, m: 0, h: 0 });
+		setUpTimer({ ms: 0, s: 0, m: 10, h: 0 });
 	};
 
 	// ---------------- Bot Clock ----------------
@@ -125,7 +127,7 @@ const MainClock = () => {
 
 	const resetBot = () => {
 		clearInterval(botInterv);
-		setBotTimer({ ms: 0, s: 0, m: 0, h: 0 });
+		setBotTimer({ ms: 0, s: 0, m: 4, h: 0 });
 	};
 
 	useEffect(() => {
@@ -173,7 +175,17 @@ const MainClock = () => {
 				</div>
 
 				<div className='center-bar'>
-					<button className='menu-button menu'>menu</button>
+					<button className='menu-button menu'>Menu</button>
+					<button
+						className='menu-button menu'
+						onClick={() => {
+							resetBot();
+							resetUp();
+						}}
+					>
+						Reset
+					</button>
+
 					<button
 						className='menu-button pause'
 						onClick={() => {
