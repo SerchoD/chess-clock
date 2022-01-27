@@ -158,7 +158,7 @@ const MainClock = () => {
 			<div className='mainClock-container col-12'>
 				<div className='upper-timer timer-container'>
 					<ButtonTimer
-						// buttonType='invert'
+						buttonType='invert'
 						active={upRunning ? 'active' : 'inactive'}
 						lose={upLose && 'lose'}
 						showTime={showUpTimer}
