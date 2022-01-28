@@ -2,15 +2,22 @@ import React, { useEffect, useState } from 'react';
 import IconPause from '../../assets/icons/IconPause/IconPause';
 import ButtonTimer from '../../Components/ButtonTimer/ButtonTimer';
 import MainContainer from '../../Components/MainContainer/MainContainer';
+import sound1 from '../../assets/sounds/changeSound1.mp3';
+import sound2 from '../../assets/sounds/changeSound2.mp3';
+import sound3 from '../../assets/sounds/start.mp3';
 
 import './MainClock.scss';
 
 const MainClock = () => {
+	const soundChange1 = new Audio(sound1);
+	const soundChange2 = new Audio(sound2);
+	const soundStart = new Audio(sound3);
+
 	const [upLose, setUpLose] = useState(false);
 	const [upTimer, setUpTimer] = useState({
 		ms: 0,
-		s: 0,
-		m: 10,
+		s: 5,
+		m: 1,
 		h: 0,
 	});
 
@@ -22,8 +29,8 @@ const MainClock = () => {
 	const [botLose, setBotLose] = useState(false);
 	const [botTimer, setBotTimer] = useState({
 		ms: 0,
-		s: 0,
-		m: 4,
+		s: 5,
+		m: 1,
 		h: 0,
 	});
 
@@ -82,7 +89,8 @@ const MainClock = () => {
 	const resetUp = () => {
 		clearInterval(upInterv);
 		setUpRunning(false);
-		setUpTimer({ ms: 0, s: 0, m: 10, h: 0 });
+		setUpLose(false);
+		setUpTimer({ ms: 0, s: 5, m: 0, h: 0 });
 	};
 
 	// ---------------- Bot Clock ----------------
@@ -129,7 +137,8 @@ const MainClock = () => {
 	const resetBot = () => {
 		clearInterval(botInterv);
 		setBotRunning(false);
-		setBotTimer({ ms: 0, s: 0, m: 4, h: 0 });
+		setBotLose(false);
+		setBotTimer({ ms: 0, s: 5, m: 0, h: 0 });
 	};
 
 	useEffect(() => {
@@ -164,10 +173,15 @@ const MainClock = () => {
 						showTime={showUpTimer}
 						onClick={() => {
 							if (!upLose && !botLose) {
+								if (upRunning && botRunning) {
+									soundChange2.play();
+								}
 								if (!upRunning && !botRunning) {
+									soundStart.play();
 									startBot();
 								}
 								if (upRunning) {
+									soundChange2.play();
 									stopUp();
 									startBot();
 								}
@@ -206,10 +220,15 @@ const MainClock = () => {
 						showTime={showBotTimer}
 						onClick={() => {
 							if (!upLose && !botLose) {
+								if (upRunning && botRunning) {
+									soundChange1.play();
+								}
 								if (!upRunning && !botRunning) {
+									soundStart.play();
 									startUp();
 								}
 								if (botRunning) {
+									soundChange1.play();
 									stopBot();
 									startUp();
 								}
